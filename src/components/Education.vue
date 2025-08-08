@@ -1,15 +1,11 @@
 <template>
   <section>
     <h2>Education</h2>
-    <ul>
-      <li v-for="(edu, index) in education" :key="index">
-        <strong>{{ edu.degree }}</strong> - {{ edu.school }} ({{ edu.year }})
-      </li>
-    </ul>
+      <h2 class="reset">Ivy Tech State College</h2>
+      <p>A.A.S., IT Web Management</p>
+      <p>Relevant Coursework:  Multimedia and Visual Communications, Electronic Imaging, Graphics for the Digital Publication, Typography, and Network Fundamentals</p>
   </section>
 </template>
 
-<script setup>
-import education from '../data/education.js'
-</script>
+
 

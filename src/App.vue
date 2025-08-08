@@ -4,9 +4,8 @@
     <Hero />
     <Skills />
     <Projects />
-    <Experience />
+    <Experiences />
     <Education />
-    <Contact />
     <Footer />
   </div>
 </template>
@@ -16,9 +15,8 @@ import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import Skills from './components/Skills.vue'
 import Projects from './components/Projects.vue'
-import Experience from './components/Experience.vue'
+import Experiences from './components/Experiences.vue'
 import Education from './components/Education.vue'
-import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 </script>
 
