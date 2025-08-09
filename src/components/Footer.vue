@@ -10,5 +10,8 @@
 
 <style scoped>
 /* Empty for now */
+footer {
+  background: #888;
+  padding: 1rem;
+}
 </style>
-

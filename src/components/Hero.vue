@@ -16,6 +16,7 @@ const tagline = 'I build clean, accessible websites and web apps.'
 .hero {
   text-align: center;
   padding: 4rem 1rem;
+  background: #CCC;
 }
 
 .name {

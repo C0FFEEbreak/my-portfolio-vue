@@ -1,18 +1,15 @@
 <template>
   <section class="site-experiences">
-    <!-- First row: Title spanning all columns -->
-    <h1 class="experiences-title">Experiences</h1>
+    <h1 class="section-title">Experiences</h1>
 
-    <!-- Second row: 3 experience columns -->
     <div class="experience-column" v-for="(experience, index) in experiences.slice(0,3)" :key="index">
-      <div class="icon">{{ experience.icon }}</div>
+      <!-- <div class="icon">{{ experience.icon }}</div> -->
       <h2 class="experience-name">{{ experience.category }}</h2>
       <p class="experience-text">{{ experience.description }}</p>
     </div>
 
-    <!-- Third row: next 3 experience columns -->
     <div class="experience-column" v-for="(experience, index) in experiences.slice(3,6)" :key="index">
-      <div class="icon">{{ experience.icon }}</div>
+      <!-- <div class="icon">{{ experience.icon }}</div> -->
       <h2 class="experience-name">{{ experience.category }}</h2>
       <p class="experience-text">{{ experience.description }}</p>
     </div>
@@ -32,11 +29,7 @@ import experiences from '../data/experiences.js'
   gap: 1.5rem;
   padding: 1rem;
   text-align: center;
-}
-
-.experiences-title {
-  grid-column: 1 / -1; /* Span all 3 columns */
-  margin-bottom: 2rem;
+  background: #a3a3a3ff;
 }
 
 .experience-column {

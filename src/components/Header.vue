@@ -24,13 +24,18 @@ const navLinks = [
 
 <style scoped>
 header {
-  background-color: #888;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #888;;
 }
 .site-header {
   display: flex;
   justify-content: space-between; /* pushes items to edges */
   align-items: center; /* vertically centers items */
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 .site-header h1 {
   margin: 0; /* removes default margin */

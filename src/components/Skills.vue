@@ -1,27 +1,81 @@
 <template>
-  <section class="site-skills">
-    <!-- First row: Title spanning all columns -->
-    <h1 class="skills-title">Skills</h1>
+<section class="site-skills">
+  <h1 class="section-title">Skills</h1>
 
-    <!-- Second row: 3 skill columns -->
-    <div class="skill-column" v-for="(skill, index) in skills.slice(0,3)" :key="index">
-      <div class="icon">{{ skill.icon }}</div>
-      <h2 class="skill-name">{{ skill.category }}</h2>
-      <p class="skill-text">{{ skill.description }}</p>
-    </div>
+      <div class="skill-column">
+        <div class="skill-icon">💻</div>
+        <div class="skill-title">Web Development</div>
+        <div class="skill-list">
+          <span class="skill-item">AngularJS</span>
+          <span class="skill-item">Bootstrap</span>
+          <span class="skill-item">CSS3</span>
+          <span class="skill-item">HTML5</span>
+          <span class="skill-item">JavaScript</span>
+          <span class="skill-item">jQuery</span>
+          <span class="skill-item">UI/UX Design</span>
+          <span class="skill-item">Vue.js</span>
+          <span class="skill-item">WordPress</span>
+        </div>
+      </div>
 
-    <!-- Third row: next 3 skill columns -->
-    <div class="skill-column" v-for="(skill, index) in skills.slice(3,6)" :key="index">
-      <div class="icon">{{ skill.icon }}</div>
-      <h2 class="skill-name">{{ skill.category }}</h2>
-      <p class="skill-text">{{ skill.description }}</p>
-    </div>
+      <div class="skill-column">
+        <div class="skill-icon">🛠️</div>
+        <div class="skill-title">Authoring Tools</div>
+        <div class="skill-list">
+          <span class="skill-item">Articulate Storyline</span>
+          <span class="skill-item">Articulate Rise</span>
+          <span class="skill-item">Captivate</span>
+          <span class="skill-item">Lectora</span>
+        </div>
+      </div>
+
+      <div class="skill-column">
+        <div class="skill-icon">🎬</div>
+        <div class="skill-title">Media Tools</div>
+        <div class="skill-list">
+          <span class="skill-item">After Effects</span>
+          <span class="skill-item">Adobe Animate</span>
+          <span class="skill-item">Audacity</span>
+          <span class="skill-item">Camtasia</span>
+          <span class="skill-item">Premiere Pro</span>
+        </div>
+      </div>
+
+      <div class="skill-column">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-title">Design</div>
+        <div class="skill-list">
+          <span class="skill-item">Illustrator</span>
+          <span class="skill-item">Photoshop</span>
+        </div>
+      </div>
+
+      <div class="skill-column">
+        <div class="skill-icon">✅</div>
+        <div class="skill-title">Accessibility</div>
+        <div class="skill-list">
+          <span class="skill-item">508 Compliance</span>
+          <span class="skill-item">QA Testing</span>
+          <span class="skill-item">SCORM</span>
+        </div>
+      </div>
+
+      <div class="skill-column">
+        <div class="skill-icon">📄</div>
+        <div class="skill-title">Other</div>
+        <div class="skill-list">
+          <span class="skill-item">Adobe Acrobat</span>
+          <span class="skill-item">LMS</span>
+          <span class="skill-item">MS Office</span>
+          <span class="skill-item">Technical Support</span>
+          <span class="skill-item">Version Control</span>
+        </div>
+      </div>
   </section>
 </template>
 
-
 <script setup>
-import skills from '../data/skills.js'
+import skills from "../data/skills.js";
 </script>
 
 <style scoped>
@@ -32,11 +86,7 @@ import skills from '../data/skills.js'
   gap: 1.5rem;
   padding: 1rem;
   text-align: center;
-}
-
-.skills-title {
-  grid-column: 1 / -1; /* Span all 3 columns */
-  margin-bottom: 2rem;
+  background: #a3a3a3ff;
 }
 
 .skill-column {
@@ -49,19 +99,27 @@ import skills from '../data/skills.js'
   border-radius: 6px;
 }
 
-.icon {
+.skill-icon {
   font-size: 2.5rem;
 }
 
-.skill-name {
+.skill-title {
   font-weight: bold;
   margin: 0;
 }
 
-.skill-text {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #555;
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  background-color: #eee;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
 }
 
 /* Responsive: stack columns on narrow screens */
@@ -74,7 +132,5 @@ import skills from '../data/skills.js'
     margin-bottom: 1rem;
   }
 }
-
-
 
 </style>
