@@ -15,9 +15,9 @@
 
 <script setup>
 const navLinks = [
-  { name: "About", url: "#about" },
   { name: "Skills", url: "#skills" },
-  { name: "Portfolio", url: "#portfolio" },
+  { name: "Projects", url: "#projects" },
+  { name: "Experiences", url: "#experiences" },
   { name: "Education", url: "#educatiom" },
 ];
 </script>
@@ -29,7 +29,6 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #888;;
 }
 .site-header {
   display: flex;
@@ -49,7 +48,7 @@ header {
 }
 .site-header nav ul li a {
   text-decoration: none;
-  color: inherit;
+  color: inherit;            /* color property from parent element */
 }
 
 /* Responsive grid layout for smaller screens */
@@ -72,7 +71,7 @@ header {
   display: block;
   text-align: center;          /* center text inside each nav item */
   padding: 0.5rem 0;
-  color: inherit;
+  color: inherit;            /* color property from parent element */
   text-decoration: none;
 }
 }

@@ -13,7 +13,6 @@
 
 <style scoped>
 .education {
-  background: #494949ff;
   padding: 1rem;
 }
 

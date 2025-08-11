@@ -1,6 +1,6 @@
 <template>
 <section class="site-skills">
-  <h1 class="section-title">Skills</h1>
+  <h1 class="section-title">&lt; &gt; Skills &lt; / &gt;</h1>
 
       <div class="skill-column">
         <div class="skill-icon">💻</div>
@@ -86,7 +86,6 @@ import skills from "../data/skills.js";
   gap: 1.5rem;
   padding: 1rem;
   text-align: center;
-  background: #a3a3a3ff;
 }
 
 .skill-column {
@@ -111,15 +110,13 @@ import skills from "../data/skills.js";
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   gap: 0.5rem;
 }
 
 .skill-item {
-  background-color: #eee;
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.9rem;
 }
 
 /* Responsive: stack columns on narrow screens */

@@ -98,20 +98,20 @@ export default {
           icon: "/icon1.png",
         },
         {
-          title: "JS Tool",
-          image: img8,
-          url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon2.png",
-        },
-        {
           title: "Web Activity",
           image: img9,
           url: "https://example.com",
           footerText: "More Info",
           icon: "/icon3.png",
         },
-        // ...up to 9 projects
+        {
+          title: "JS Tool",
+          image: img8,
+          url: "https://example.com",
+          footerText: "More Info",
+          icon: "/icon2.png",
+        },
+        //
       ],
     };
   },
@@ -119,9 +119,8 @@ export default {
 </script>
 
 <style scoped>
-.section {
+.projects.section {
   padding: 40px 20px;
-  background: #737373ff;
 }
 
 .projects {
@@ -173,7 +172,7 @@ export default {
   padding: 0.8rem 1rem;
 }
 
-.footer-text {
+.projects .footer-text {
   font-size: 0.9rem;
   color: #555;
 }

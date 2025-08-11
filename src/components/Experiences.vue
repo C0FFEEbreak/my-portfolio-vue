@@ -29,7 +29,6 @@ import experiences from '../data/experiences.js'
   gap: 1.5rem;
   padding: 1rem;
   text-align: center;
-  background: #a3a3a3ff;
 }
 
 .experience-column {

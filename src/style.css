@@ -13,3 +13,39 @@ body {
   grid-column: 1 / -1; /* Span all 3 columns */
 }
 
+/* Color Scheme */
+div#app {
+  background: #9DA3A4;
+}
+h1, h2, li, p {
+  color: #C5C6BF;
+}
+header {
+  background: #182025;
+}
+.hero {
+  background: #29353C;
+}
+.site-skills {
+  background: #182025;
+}
+.skill-column {
+  color: #C5C6BF;
+}
+.skill-item {
+  background-color: #29353C;
+}
+.projects.section {
+  background: #29353C;
+}
+.site-experiences {
+  background: #182025;
+}
+.education {
+  background: #29353C;
+}
+footer {
+  background: #182025;
+}
+
+
