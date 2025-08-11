@@ -1,5 +1,5 @@
 <template>
-  <section class="projects section">
+  <section class="projects">
     <h1 class="section-title">Projects</h1>
     <div class="projects">
       <div class="projects-grid">
@@ -32,16 +32,16 @@
 </template>
 
 <script>
-import img1 from "../assets/01.jpg";
-import img2 from "../assets/02.jpg";
-import img3 from "../assets/03.jpg";
-import img4 from "../assets/04.jpg";
-import img5 from "../assets/05.jpg";
-import img6 from "../assets/06.jpg";
-import img7 from "../assets/07.jpg";
-import img8 from "../assets/08.jpg";
-import img9 from "../assets/09.jpg";
-import icon1 from "../assets/icon1.png";
+import img1 from "@/assets/01.jpg";
+import img2 from "@/assets/02.jpg";
+import img3 from "@/assets/03.jpg";
+import img4 from "@/assets/04.jpg";
+import img5 from "@/assets/05.jpg";
+import img6 from "@/assets/06.jpg";
+import img7 from "@/assets/07.jpg";
+import img8 from "@/assets/08.jpg";
+import img9 from "@/assets/09.jpg";
+import icon1 from "@/assets/icons/icon-codepen.png";
 
 export default {
   name: "ProjectsSection",
@@ -119,7 +119,7 @@ export default {
 </script>
 
 <style scoped>
-.projects.section {
+.projects {
   padding: 40px 20px;
 }
 
@@ -138,7 +138,6 @@ export default {
   display: flex;
   flex-direction: column;
   background: #f9f9f9;
-  border-radius: 12px;
   overflow: hidden; /* so top corners are clean */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
@@ -148,8 +147,6 @@ export default {
   width: 100%;
   height: auto;
   display: block;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   transition: transform 0.3s ease;
 }
 .project-card a:hover .card-image {

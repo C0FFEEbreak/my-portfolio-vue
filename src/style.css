@@ -1,8 +1,6 @@
-/* style.css */
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #f5f5f5;
 }
 
 .section-title {
@@ -19,6 +17,10 @@ div#app {
 }
 h1, h2, li, p {
   color: #C5C6BF;
+
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 header {
   background: #182025;
@@ -26,7 +28,7 @@ header {
 .hero {
   background: #29353C;
 }
-.site-skills {
+.skills {
   background: #182025;
 }
 .skill-column {
@@ -35,10 +37,10 @@ header {
 .skill-item {
   background-color: #29353C;
 }
-.projects.section {
+.projects {
   background: #29353C;
 }
-.site-experiences {
+.experiences {
   background: #182025;
 }
 .education {
@@ -49,3 +51,38 @@ footer {
 }
 
 
+
+/* Rounded Corner */
+.skill-column.top-left {
+	-webkit-border-top-left-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	border-top-left-radius: 20px;
+}
+.skill-column.top-right {
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-right-radius: 20px;
+}
+.skill-column.bottom-left {
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-bottom-left-radius: 20px;
+}
+.skill-column.bottom-right {
+	-webkit-border-bottom-right-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	border-bottom-right-radius: 20px;
+}
+.project-card {
+  border-radius: 20px;
+}
+.card-image {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.experiences-image img {
+  border-radius: 20px;
+}
+.experiences-accordion {
+  border-radius: 20px;
+}

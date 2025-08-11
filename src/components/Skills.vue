@@ -1,10 +1,14 @@
 <template>
-<section class="site-skills">
+<section class="skills">
   <h1 class="section-title">&lt; &gt; Skills &lt; / &gt;</h1>
 
-      <div class="skill-column">
-        <div class="skill-icon">💻</div>
+      <div class="skill-column top-left">
+        <div class="skill-header">
+        <div class="skill-icon">
+          <img src="@/assets/icons/icon-web.svg" alt="Web Development" />
+        </div>
         <div class="skill-title">Web Development</div>
+        </div>
         <div class="skill-list">
           <span class="skill-item">AngularJS</span>
           <span class="skill-item">Bootstrap</span>
@@ -19,8 +23,12 @@
       </div>
 
       <div class="skill-column">
-        <div class="skill-icon">🛠️</div>
+        <div class="skill-header">
+        <div class="skill-icon">
+          <img src="@/assets/icons/icon-authoring.svg" alt="Web Development" />
+        </div>
         <div class="skill-title">Authoring Tools</div>
+        </div>
         <div class="skill-list">
           <span class="skill-item">Articulate Storyline</span>
           <span class="skill-item">Articulate Rise</span>
@@ -29,9 +37,13 @@
         </div>
       </div>
 
-      <div class="skill-column">
-        <div class="skill-icon">🎬</div>
+      <div class="skill-column top-right">
+        <div class="skill-header">
+        <div class="skill-icon">
+          <img src="@/assets/icons/icon-media.svg" alt="Web Development" />
+        </div>
         <div class="skill-title">Media Tools</div>
+        </div>
         <div class="skill-list">
           <span class="skill-item">After Effects</span>
           <span class="skill-item">Adobe Animate</span>
@@ -41,9 +53,13 @@
         </div>
       </div>
 
-      <div class="skill-column">
-        <div class="skill-icon">🔧</div>
+      <div class="skill-column bottom-left">
+        <div class="skill-header">
+        <div class="skill-icon">
+          <img src="@/assets/icons/icon-deign.svg" alt="Web Development" />
+        </div>
         <div class="skill-title">Design</div>
+        </div>
         <div class="skill-list">
           <span class="skill-item">Illustrator</span>
           <span class="skill-item">Photoshop</span>
@@ -51,8 +67,12 @@
       </div>
 
       <div class="skill-column">
-        <div class="skill-icon">✅</div>
+        <div class="skill-header">
+        <div class="skill-icon">
+          <img src="@/assets/icons/icon-accessibility.svg" alt="Web Development" />
+        </div>
         <div class="skill-title">Accessibility</div>
+        </div>
         <div class="skill-list">
           <span class="skill-item">508 Compliance</span>
           <span class="skill-item">QA Testing</span>
@@ -60,9 +80,13 @@
         </div>
       </div>
 
-      <div class="skill-column">
-        <div class="skill-icon">📄</div>
+      <div class="skill-column bottom-right">
+        <div class="skill-header">
+        <div class="skill-icon">
+          <img src="@/assets/icons/icon-other.svg" alt="Web Development" />
+        </div>
         <div class="skill-title">Other</div>
+        </div>
         <div class="skill-list">
           <span class="skill-item">Adobe Acrobat</span>
           <span class="skill-item">LMS</span>
@@ -79,55 +103,71 @@ import skills from "../data/skills.js";
 </script>
 
 <style scoped>
-.site-skills {
+
+.skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr 1fr;
   gap: 1.5rem;
   padding: 1rem;
-  text-align: center;
 }
 
 .skill-column {
   display: flex;
   flex-direction: column;
+  border: 1px solid #ddd;
+  overflow: hidden; /* ensures the colored top row follows card rounding */
+}
+
+
+/* Top row background */
+.skill-header {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  background-color: #080B0C;
+  padding: 0.75rem;
 }
 
 .skill-icon {
   font-size: 2.5rem;
 }
 
+.skill-icon img {
+  width: 40px;
+  height: 40px;
+}
+
 .skill-title {
   font-weight: bold;
-  margin: 0;
+  letter-spacing: 0.1em;
+  padding: 0 8px 4px;
+  color: #E4572E;
 }
 
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
   gap: 0.5rem;
+  padding: 0.75rem;
 }
 
 .skill-item {
   padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* Responsive: stack columns on narrow screens */
+/* Responsive */
 @media (max-width: 768px) {
-  .site-skills {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto repeat(6, 1fr);
-  }
-  .skills-title {
-    margin-bottom: 1rem;
-  }
+	.skills {
+		grid-template-columns: 1fr;
+	}
+	.skill-column {
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
 }
+
+
 
 </style>

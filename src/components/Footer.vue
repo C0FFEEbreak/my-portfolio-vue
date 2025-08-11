@@ -9,7 +9,6 @@
 </script>
 
 <style scoped>
-/* Empty for now */
 footer {
   padding: 1rem;
 }
