@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-const name = 'Your Name'
+const name = 'Hi, I am Stacey Trent Donica.'
 const title = 'Front-End Developer'
 const tagline = 'I build clean, accessible websites and web apps.'
 </script>

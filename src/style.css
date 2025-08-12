@@ -2,13 +2,32 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
-
-.section-title {
+h1.section-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
   grid-column: 1 / -1; /* Span all 3 columns */
+  display: block; /* Essential for containing the ::after element to the header's width */
+  position: relative; /* Allows positioning of the ::after element relative to the header */
+}
+h1.section-title::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  left: 50%; /* Centers the underline */
+  bottom: -5px; /* Adjust this value to control the distance from the text */
+  width: 50%; /* Adjust this to control the line's length (e.g., 50% for half the width) */
+  height: 1px; /* Adjust this to control the line's thickness */
+  background: #9DA3A4; /* Set your desired color */
+  transform: translateX(-50%); /* Centers the underline horizontally */
+}
+hr {
+  width: 50%; /* Adjust this to control the line's length (e.g., 50% for half the width) */
+  margin: 0 auto; /* Centers the hr tag horizontally if its width is less than 100% */
+  margin-bottom: 24px;
+  border: none;
+  height: 1px;
+  background-color: #C5C6BF;
 }
 
 /* Color Scheme */

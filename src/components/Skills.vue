@@ -1,6 +1,6 @@
 <template>
 <section class="skills">
-  <h1 class="section-title">&lt; &gt; Skills &lt; / &gt;</h1>
+  <h1 class="section-title">Skills</h1>
 
       <div class="skill-column top-left">
         <div class="skill-header">
@@ -141,7 +141,7 @@ import skills from "../data/skills.js";
   font-weight: bold;
   letter-spacing: 0.1em;
   padding: 0 8px 4px;
-  color: #E4572E;
+  color: #fff;
 }
 
 .skill-list {

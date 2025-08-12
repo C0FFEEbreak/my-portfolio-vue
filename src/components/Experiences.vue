@@ -105,7 +105,7 @@ function toggleAccordion(index) {
 }
 
 .experiences-accordion {
-  max-width: 500px; /* or whatever width fits your design */
+  max-width: 370px; /* or whatever width fits your design */
   width: 100%;      /* lets it be responsive up to max-width */
   margin: 0 auto;   /* centers horizontally if narrower than parent */
   padding: 20px;
@@ -129,9 +129,9 @@ span.accordion-arrow svg {
   align-items: center;
   padding: 0.75rem 0;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: normal;
   cursor: pointer;
-  color: #E4572E;
+  color: #fff;
 }
 
 .accordion-arrow svg {
