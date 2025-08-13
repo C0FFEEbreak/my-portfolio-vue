@@ -1,15 +1,14 @@
 <template>
-  <header>
-    <header class="site-header">
-      <h1>Donica</h1>
-      <nav>
-        <ul>
-          <li v-for="link in navLinks" :key="link.name">
-            <a :href="link.url">{{ link.name }}</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <header class="site-header">
+    <nav>
+      <ul>
+        <li v-for="(link, index) in navLinks" :key="link.name">
+          <a :href="link.url">{{ link.name }}</a>
+          <!-- Separator: only add if not last item -->
+          <span v-if="index < navLinks.length - 1" class="separator"></span>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -18,100 +17,88 @@ const navLinks = [
   { name: "Skills", url: "#skills" },
   { name: "Projects", url: "#projects" },
   { name: "Experiences", url: "#experiences" },
-  { name: "Education", url: "#educatiom" },
+  { name: "Education", url: "#education" },
 ];
 </script>
 
 <style scoped>
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
 .site-header {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
   display: flex;
-  justify-content: space-between; /* pushes items to edges */
-  align-items: center; /* vertically centers items */
-  padding: 1rem 2rem;
-}
-.site-header h1 {
-  margin: 0; /* removes default margin */
-}
-.site-header nav ul {
-  display: flex; /* horizontal list */
-  list-style: none; /* removes bullets */
-  margin: 0;
-  padding: 0;
-  gap: 2rem; /* space between links */
-}
-.site-header nav ul li a {
-  text-decoration: none;
-  color: inherit;            /* color property from parent element */
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+
+  /* Dark glassmorphism */
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive grid layout for smaller screens */
-@media (max-width: 768px) {
 .site-header nav ul {
-  grid-row: 2;
-  grid-column: 1 / -1;
-  
-  display: grid;
-  grid-auto-flow: column;      /* place items in a row */
-  grid-auto-columns: 1fr;      /* each <li> takes equal fraction */
-  justify-content: stretch;    /* stretch across full width */
+  display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
-  gap: 0;                      /* no gaps, since items evenly spaced */
+  padding: 0;
+  gap: 1rem;
+}
+
+.site-header nav ul li {
+  display: flex;
+  align-items: center;
 }
 
 .site-header nav ul li a {
-  display: block;
-  text-align: center;          /* center text inside each nav item */
-  padding: 0.5rem 0;
-  color: inherit;            /* color property from parent element */
   text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
+
+.site-header nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd77a;
 }
 
+.separator {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: pulse 3s ease-in-out infinite;
+  margin-left: 1rem;
+}
 
+@keyframes pulse {
+  0%, 100% {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    background: rgba(255, 215, 122, 0.8); /* warm gold mid-pulse */
+  }
+}
 
-@media (max-width: 500px) {
+/* Responsive */
+@media (max-width: 768px) {
   .site-header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
     padding: 1rem;
   }
-
-  .site-header h1 {
-    grid-column: 1 / -1; /* full width */
-  }
-
   .site-header nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* two equal columns */
-    gap: 0 3rem; /* 3rem gap between columns */
-    padding: 0;
-    margin: 0;
-    justify-content: stretch; /* stretch columns to fill */
+    gap: 0.75rem;
   }
-
-  .site-header nav ul li {
-    /* optional: to left-align text inside each column */
-    text-align: left;
-  }
-
-  .site-header nav ul li a {
-    display: block;
-    padding: 0.5rem 0;
-    width: 100%;
-    color: inherit;
-    text-decoration: none;
+  .separator {
+    display: none;
   }
 }
-
 </style>

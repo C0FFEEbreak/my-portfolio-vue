@@ -2,6 +2,9 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+html {
+  scroll-behavior: smooth; /* smooth scrolling */
+}
 h1.section-title {
   font-size: 2rem;
   font-weight: bold;
@@ -44,6 +47,16 @@ h1, h2, li, p {
 header {
   background: #182025;
 }
+.section-title {
+  color: #9FC2D0;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 2px black; /* horizontal, vertical, blur, color */
+}
 .hero {
   background: #29353C;
 }
@@ -73,35 +86,67 @@ footer {
 
 /* Rounded Corner */
 .skill-column.top-left {
-	-webkit-border-top-left-radius: 20px;
-	-moz-border-radius-topleft: 20px;
-	border-top-left-radius: 20px;
+	-webkit-border-top-left-radius: 12px;
+	-moz-border-radius-topleft: 12px;
+	border-top-left-radius: 12px;
 }
 .skill-column.top-right {
-	-webkit-border-top-right-radius: 20px;
-	-moz-border-radius-topright: 20px;
-	border-top-right-radius: 20px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-radius-topright: 12px;
+	border-top-right-radius: 12px;
 }
 .skill-column.bottom-left {
-	-webkit-border-bottom-left-radius: 20px;
-	-moz-border-radius-bottomleft: 20px;
-	border-bottom-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 12px;
+	-moz-border-radius-bottomleft: 12px;
+	border-bottom-left-radius: 12px;
 }
 .skill-column.bottom-right {
-	-webkit-border-bottom-right-radius: 20px;
-	-moz-border-radius-bottomright: 20px;
-	border-bottom-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 12px;
+	-moz-border-radius-bottomright: 12px;
+	border-bottom-right-radius: 12px;
 }
 .project-card {
-  border-radius: 20px;
+  border-radius: 12px;
 }
 .card-image {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 .experiences-image img {
-  border-radius: 20px;
+  border-radius: 12px;
 }
 .experiences-accordion {
-  border-radius: 20px;
+  border-radius: 12px;
 }
+.experience-square {
+  border-radius: 12px;
+}
+.experience-icon img {
+  border-radius: 12px;
+}
+
+
+
+
+/*  Hero Typing Effect  */
+.typed-cursor {
+  /* Adjust blink speed */
+  /* animation: blink 1.2s infinite; */
+  animation: none !important;
+
+  /* Change cursor color */
+  color: #FFF;
+
+  /* Change cursor opacity for subtle blinking */
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+

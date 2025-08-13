@@ -1,3 +1,5 @@
+
+
 <script setup>
 import { ref } from 'vue'
 import experiences from '@/data/experiences.js'
@@ -10,13 +12,27 @@ function toggleAccordion(index) {
 </script>
 
 <template>
-  <section class="experiences">
+  <section class="experiences" id="experiences">
+    <!-- Top row -->
     <h1 class="section-title">Experiences</h1>
+
+    <!-- Bottom row -->
     <div class="experiences-content">
-      <div class="experiences-image">
-        <img src="@/assets/icons/icon-briefcase.svg" alt="Experience Image" />
+      
+      <!-- Column 1: Experience square -->
+      <div class="experience-square">
+        <div class="experience-inner">
+          <div class="experience-icon">
+            <img src="@/assets/icons/icon-briefcase.svg" alt="Briefcase Icon" />
+          </div>
+          <div class="experience-text">
+            <div class="experience-number">20+</div>
+            <div class="experience-label">Years of Experience</div>
+          </div>
+        </div>
       </div>
 
+      <!-- Column 2: Accordion -->
       <div class="experiences-accordion">
         <div
           v-for="(experience, index) in experiences"
@@ -31,32 +47,30 @@ function toggleAccordion(index) {
             :id="'accordion-header-' + index"
           >
             <span>{{ experience.category }}</span>
-<span class="accordion-arrow" aria-hidden="true">
-  <!-- Down arrow (shown when active) -->
-  <svg
-    v-if="activeIndex === index"
-    xmlns="http://www.w3.org/2000/svg"
-    height="40px"
-    width="40px"
-    viewBox="0 -960 960 960"
-    fill="#e3e3e3"
-  >
-    <path d="M480-344 240-584l47.33-47.33L480-438.67l192.67-192.66L720-584 480-344Z" />
-  </svg>
-
-  <!-- Left arrow (shown when inactive) -->
-  <svg
-    v-else
-    xmlns="http://www.w3.org/2000/svg"
-    height="40px"
-    width="40px"
-    viewBox="0 -960 960 960"
-    fill="#e3e3e3"
-  >
-    <path d="M560.67-240 320-480.67l240.67-240.66L608-674 414.67-480.67 608-287.33 560.67-240Z" />
-  </svg>
-</span>
-
+            <span class="accordion-arrow" aria-hidden="true">
+              <!-- Down arrow (active) -->
+              <svg
+                v-if="activeIndex === index"
+                xmlns="http://www.w3.org/2000/svg"
+                height="40px"
+                width="40px"
+                viewBox="0 -960 960 960"
+                fill="#e3e3e3"
+              >
+                <path d="M480-344 240-584l47.33-47.33L480-438.67l192.67-192.66L720-584 480-344Z" />
+              </svg>
+              <!-- Left arrow (inactive) -->
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                height="40px"
+                width="40px"
+                viewBox="0 -960 960 960"
+                fill="#e3e3e3"
+              >
+                <path d="M560.67-240 320-480.67l240.67-240.66L608-674 414.67-480.67 608-287.33 560.67-240Z" />
+              </svg>
+            </span>
           </button>
 
           <div
@@ -74,6 +88,8 @@ function toggleAccordion(index) {
   </section>
 </template>
 
+
+
 <style scoped>
 .experiences {
   display: grid;
@@ -83,38 +99,91 @@ function toggleAccordion(index) {
 }
 
 .section-title {
-  grid-row: 1;
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
 }
 
 .experiences-content {
-  grid-row: 2;
   display: flex;
   gap: 2rem;
 }
 
-.experiences-image {
-  flex: 0 0 30%;
-}
-
-.experiences-image img {
-  width: 100%;
-  background: #101519;
-}
-
+/* Make columns split 50% each */
+.experience-square,
 .experiences-accordion {
-  max-width: 370px; /* or whatever width fits your design */
-  width: 100%;      /* lets it be responsive up to max-width */
-  margin: 0 auto;   /* centers horizontally if narrower than parent */
-  padding: 20px;
+  flex: 1 1 50%;
+}
+
+/* Square with centered icon + text */
+.experiences-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* vertical centering of columns */
+}
+
+/* 50% width for each column */
+.experience-square,
+.experiences-accordion {
+  flex: 1 1 50%;
+}
+
+/* The square itself */
+.experience-square {
+  background-color: #3A4B55;
+  color: #fff;
+  width: clamp(200px, 80%, 300px);  /* responsive width */
+  height: clamp(150px, 60vw, 100px); /* responsive height */
+  margin: 0 auto; /* horizontal centering */
+  
+  display: flex;  /* centers inner content */
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.experience-icon img {
+  width: 48px;
+  height: 48px;
   background: #101519;
+  padding: 12px;
+}
+
+.experience-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.experience-label {
+  font-size: 1rem;
+  color: #c5c6bf;
+}
+
+
+
+/* Accordion */
+.experiences-accordion {
+  background: #3A4B55;
+  padding: 20px;
+  width: 100%;       /* Always full width of its column */
+  max-width: none;   /* Remove desktop max-width limit on mobile */
+  box-sizing: border-box;
 }
 
 span.accordion-arrow svg {
   color: #C5C6BF;
 }
+
 .accordion-item {
   border-bottom: 1px solid #C5C6BF;
 }
@@ -129,7 +198,6 @@ span.accordion-arrow svg {
   align-items: center;
   padding: 0.75rem 0;
   font-size: 1.1rem;
-  font-weight: normal;
   cursor: pointer;
   color: #fff;
 }
@@ -146,13 +214,23 @@ span.accordion-arrow svg {
   color: #555;
 }
 
+/* Mobile layout */
 @media (max-width: 768px) {
   .experiences-content {
     flex-direction: column;
+    align-items: stretch; /* make children span full width */
   }
-  .experiences-image,
+  .experience-square {
+    max-width: 90%;
+    max-height: 20%;
+  }
+  .experience-square,
   .experiences-accordion {
-    flex: 100%;
+    flex: none;    /* don't let flex try to shrink it */
+    width: 100%;   /* full screen width in mobile layout */
   }
 }
+
+
 </style>
+

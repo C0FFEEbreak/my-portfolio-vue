@@ -82,7 +82,7 @@ export default {
         const alpha = 0.4 + (scale - 0.5);
 
         ctx.font = `${14 * scale}px Arial`;
-        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fillStyle = `rgba(56, 56, 56, ${alpha})`; // change text color
         ctx.textAlign = "center";
         ctx.fillText(p.word, x2d, y2d);
       });

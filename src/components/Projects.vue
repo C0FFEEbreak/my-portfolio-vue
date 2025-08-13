@@ -1,5 +1,5 @@
 <template>
-  <section class="projects">
+  <section class="projects" id="projects">
     <h1 class="section-title">Projects</h1>
     <div class="projects">
       <div class="projects-grid">
@@ -59,57 +59,57 @@ export default {
           title: "Web Activity",
           image: img2,
           url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon2.png",
+          footerText: "Multiple Choice",
+          icon: icon1,
         },
         {
           title: "Website",
           image: img3,
           url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon3.png",
+          footerText: "Yume Poke",
+          icon: icon1,
         },
         {
           title: "Web Activity",
           image: img4,
           url: "https://example.com",
-          footerText: "Details",
-          icon: "/icon1.png",
+          footerText: "Click to Reveal",
+          icon: icon1,
         },
         {
           title: "Web Activity",
           image: img5,
           url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon2.png",
+          footerText: "Click to Reveal",
+          icon: icon1,
         },
         {
           title: "JS Tool",
           image: img6,
           url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon3.png",
+          footerText: "Checklist",
+          icon: icon1,
         },
         {
           title: "JS Tool",
           image: img7,
           url: "https://example.com",
-          footerText: "Details",
-          icon: "/icon1.png",
+          footerText: "Calculator",
+          icon: icon1,
         },
         {
           title: "Web Activity",
           image: img9,
           url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon3.png",
+          footerText: "Click to Reveal",
+          icon: icon1,
         },
         {
           title: "JS Tool",
           image: img8,
           url: "https://example.com",
-          footerText: "More Info",
-          icon: "/icon2.png",
+          footerText: "Stopwatch",
+          icon: icon1,
         },
         //
       ],
@@ -137,7 +137,7 @@ export default {
 .project-card {
   display: flex;
   flex-direction: column;
-  background: #f9f9f9;
+  background: #C5C6BF;
   overflow: hidden; /* so top corners are clean */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
@@ -158,7 +158,7 @@ export default {
   padding: 1rem;
   font-weight: bold;
   font-size: 1rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #C5C6BF;
 }
 
 /* Third row: two columns */
