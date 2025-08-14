@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import path from 'path'
 
-// IMPORTANT: Replace 'my-portfolio-vue' with your GitHub repo name
 export default defineConfig({
   plugins: [vue()],
-  base: '/my-portfolio-vue/'
+  base: '/my-portfolio-vue/', // For GitHub Pages
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  }
 })
